@@ -1,0 +1,9 @@
+version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
+options: "6325e990af0627fc7fc49c605cc8f4af"
+build_time: [533931739, 429499000]
+inputs:
+  "/Users/plin2/Desktop/Tripper/Tripper/ViewController.swift": !dirty [533927062, 0]
+  "/Users/plin2/Desktop/Tripper/Tripper/AppDelegate.swift": !dirty [533200063, 0]
+  "/Users/plin2/Desktop/Tripper/Tripper/DetailViewController.swift": !dirty [533926710, 0]
+  "/Users/plin2/Desktop/Tripper/Tripper/VVCollectionViewCell.swift": !dirty [533840261, 0]
+  "/Users/plin2/Desktop/Tripper/Tripper/InteractiveViewController.swift": !dirty [533924455, 0]

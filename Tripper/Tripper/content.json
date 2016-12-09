@@ -1,0 +1,32 @@
+[{
+ "contentId": "8914",
+ "latitude": 37.817850,
+ "longitude": -122.418380,
+ "title": "X-Man: The Last Stand (2006)",
+ "snippet": "Golden gate bridge was teared down by Magneto!",
+ "scenes": ["t2"]
+ },{
+ "contentId": "12579",
+ "latitude": 37.802031,
+ "longitude": -122.448680,
+ "title": "The Rock (1999)",
+ "snippet": "Palace of Fine Art",
+ "scenes": ["t1"]
+ },{
+ "contentId": "197950",
+ "latitude": 37.813288,
+ "longitude": -122.477825,
+ "title": "Rise of the Planet of the Apes (2011)",
+ "snippet": "Golden Gate Bridge",
+ "scenes": ["t3"]
+ },{
+ "contentId": "629657",
+ "latitude": 37.806142,
+ "longitude": -122.421884,
+ "title": "Big Eyes (2014)",
+ "snippet": "Keane Eyes Gallery in San Francisco",
+ "scenes": ["t4", "t4_1", "t4_2", "t4_3"]
+ }
+ ]
+
+
