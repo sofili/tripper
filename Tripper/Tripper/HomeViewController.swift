@@ -9,16 +9,26 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import EventKit
+import BRYXBanner
+
+// blue - UIColor(red:66.00/255.0, green:165.0/255.0, blue:245/255.0, alpha:1.000)
+// purple - UIColor(red:165.00/255.0, green:101.0/255.0, blue:249/255.0, alpha:1.000)
+
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sfoCV: UICollectionView!
     @IBOutlet weak var nrtCV: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var needPermissionView: UIView!
+
     let contents: [JSON]
     let sfo: [JSON]
     let nrt: [JSON]
     let cdg: [JSON]
+    let eventStore = EKEventStore()
+    var events: [EKEvent]?
     
     required init?(coder aDecoder: NSCoder) {
         if let arr = getJson("sfo")?.array {
@@ -44,7 +54,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.init(coder: aDecoder)
         
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField
@@ -52,19 +62,28 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         textFieldInsideSearchBar?.textColor = .white
         let s = self.scrollView.bounds.size
         self.scrollView.contentSize = CGSize(width: s.width, height: 900.0)
+        checkCalendarAuthorizationStatus()
+        setupNotificationSettings()
+
     }
     
     @IBAction func seeAllSFO(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
+        vc.setData(city: .sfo)
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func seeAllNRT(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
+        vc.setData(city: .nrt)
+        self.navigationController?.pushViewController(vc, animated: true)
+
     }
     @IBAction func seeAllCDG(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
-        
+        vc.setData(city: .cdg)
         self.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -108,6 +127,105 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     }
+// MARK - Calendar
+    
+    @IBAction func secretEventTap() {
+
+        
+        // create a corresponding local notification
+        print("user taps secret event btn")
+        let city = "San Francisco"
+        let notification = UILocalNotification()
+        notification.alertBody = "Traveling to \(city), would you be interested checking out movies that were shot at there? "
+        notification.alertAction = "Yes, take me to Tripper"
+        notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.userInfo = ["action": "goToTripper"]
+        notification.category = "tripperCategory"
+        UIApplication.shared.scheduleLocalNotification(notification)
+    
+    }
+    func checkCalendarAuthorizationStatus() {
+        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        
+        switch (status) {
+        case EKAuthorizationStatus.notDetermined:
+            requestAccessToCalendar()
+        case EKAuthorizationStatus.authorized:
+            loadCalendars()
+        case EKAuthorizationStatus.restricted, EKAuthorizationStatus.denied:
+            needPermissionView.isHidden = false
+        }
+    }
+    
+    func requestAccessToCalendar() {
+        eventStore.requestAccess(to: EKEntityType.event, completion: {
+            (accessGranted: Bool, error: Error?) in
+            
+            if accessGranted == true {
+                DispatchQueue.main.async(execute: {
+                    self.loadCalendars()
+                })
+            } else {
+                DispatchQueue.main.async(execute: {
+                    self.needPermissionView.isHidden = false
+                })
+            }
+        })
+    }
+    
+    func loadCalendars() {
+        let calendars = eventStore.calendars(for: EKEntityType.event)
+        
+        for calendar in calendars {
+            if calendar.title == "Calendar" {
+                
+                let now = Date()
+                let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
+                
+                let predicate = eventStore.predicateForEvents(withStart: now, end: oneMonthAfter as Date, calendars: [calendar])
+                
+                self.events = eventStore.events(matching: predicate)
+            }
+        }
+    }
+    
+    func setupNotificationSettings() {
+        let notificationSettings: UIUserNotificationSettings! = UIApplication.shared.currentUserNotificationSettings
+        
+        if (notificationSettings.types == UIUserNotificationType.alert){
+            // Specify the notification types.
+            var notificationTypes: UIUserNotificationType = UIUserNotificationType.alert
+            
+            var gotoTripperAction = UIMutableUserNotificationAction()
+            gotoTripperAction.identifier = "toTripper"
+            gotoTripperAction.title = "Check it out"
+            gotoTripperAction.activationMode = UIUserNotificationActivationMode.foreground
+            gotoTripperAction.isDestructive = false
+            gotoTripperAction.isAuthenticationRequired = true
+            
+//            var trashAction = UIMutableUserNotificationAction()
+//            trashAction.identifier = "trashAction"
+//            trashAction.title = "Delete list"
+//            trashAction.activationMode = UIUserNotificationActivationMode.Background
+//            trashAction.destructive = true
+//            trashAction.authenticationRequired = true
+//            
+            // Specify the category related to the above actions.
+            var tripperCategory = UIMutableUserNotificationCategory()
+            tripperCategory.identifier = "tripperCategory"
+            tripperCategory.setActions([gotoTripperAction], for: UIUserNotificationActionContext.default)
+            tripperCategory.setActions([gotoTripperAction], for: UIUserNotificationActionContext.minimal)
+            
+            
+            let categoriesForSettings = NSSet(objects: tripperCategory)
+            
+            // Register the notification settings.
+            let newNotificationSettings = UIUserNotificationSettings(types: notificationTypes, categories: categoriesForSettings as! Set<UIUserNotificationCategory>)
+            UIApplication.shared.registerUserNotificationSettings(newNotificationSettings)
+        }
+    }
+
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()

@@ -1,4 +1,5 @@
 PODS:
+  - BRYXBanner (0.7.1)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
@@ -9,15 +10,17 @@ PODS:
   - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
+  - BRYXBanner
   - GoogleMaps
   - GooglePlaces
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  BRYXBanner: 34eabf9c6c009f187948ca78a4f3bba3767d0f04
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 0bfee2b6edd85fa10c29e14d7a7207e8211bac2b
+PODFILE CHECKSUM: f4b897f308bc5aa2cdc6df98ccdcf2b5dac61705
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.1.1

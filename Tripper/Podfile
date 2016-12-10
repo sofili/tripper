@@ -5,4 +5,5 @@ target 'Tripper' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SwiftyJSON'
+  pod 'BRYXBanner'
 end
