@@ -10,33 +10,49 @@ import UIKit
 import GoogleMaps
 import SwiftyJSON
 
+enum City: String {
+    case sfo = "sfo"
+    case nrt = "nrt"
+    case cdg = "cdg"
+}
+
 class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     var mapView: GMSMapView!
+    var city: City!
     
-    let contents: [JSON]
+    var contents: [JSON]! = nil
     
     var collectionViewContent: JSON? = nil
     
     required init?(coder aDecoder: NSCoder) {
-        if let arr = getJson("sfo")?.array {
+        super.init(coder: aDecoder)
+        
+    }
+    
+    func setData(city: City) {
+        self.city = city
+        if let arr = getJson(city.rawValue)?.array {
             self.contents = arr
-//            self.collectionViewContent = arr[0]
+            //            self.collectionViewContent = arr[0]
         } else {
             self.contents = []
         }
-        super.init(coder: aDecoder)
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Default SFO
+        var camera = GMSCameraPosition.camera(withLatitude: 37.806592, longitude: -122.4452370, zoom: 12.0)
+        if city == City.nrt {
+            camera = GMSCameraPosition.camera(withLatitude: 36.245659, longitude: 137.5210113, zoom: 6.0)
+        } else if city == City.cdg {
+            camera = GMSCameraPosition.camera(withLatitude: 35.6668861, longitude: 139.6751166, zoom: 12.0)
+        }
         
-        
-        let camera = GMSCameraPosition.camera(withLatitude: 37.806592, longitude: -122.4452370, zoom: 12.0)
 //        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.mapView = GMSMapView.map(withFrame: self.view.bounds, camera: camera)
         self.mapView.isMyLocationEnabled = true
