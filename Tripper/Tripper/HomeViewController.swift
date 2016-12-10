@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         
         let s = self.scrollView.bounds.size
-        self.scrollView.contentSize = CGSize(width: s.width, height: 900.0)
+        self.scrollView.contentSize = CGSize(width: s.width, height: 800.0)
         checkCalendarAuthorizationStatus()
         setupNotificationSettings()
 
