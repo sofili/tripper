@@ -152,23 +152,20 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         print(indexPath.item)
         let content = self.contents[indexPath.item]
         
+        let vc = DetailViewController()
+        vc.allowedDismissDirection = .bottom
+        vc.directionLock = true
+        vc.maskType = .black
+        vc.content = content
+        vc.ind = indexPath.item
+        print("====\(vc.titleLabel)")
+        //            vc.titleLabel.text = content["title"].stringValue
+        //            vc.imageView.image = UIImage(named: "t\(indexPath.item + 1).jpg")
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            
-            vc.allowedDismissDirection = .bottom
-            vc.directionLock = true
-            vc.maskType = .black
-            vc.content = content
-            vc.ind = indexPath.item
-            print("====\(vc.titleLabel)")
-//            vc.titleLabel.text = content["title"].stringValue
-//            vc.imageView.image = UIImage(named: "t\(indexPath.item + 1).jpg")
-            
-//            
-//            
-            
-            vc.showInteractive()
-        }
+        //
+        //
+        
+        vc.showInteractive()
     }
 
 }
