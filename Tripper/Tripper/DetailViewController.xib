@@ -8,7 +8,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Tripper" customModuleProvider="target">
+            <connections>
+                <outlet property="ava1" destination="yO7-uT-Edp" id="Lij-cu-QNm"/>
+                <outlet property="ava2" destination="lVw-4t-NiX" id="L7I-S5-Y8J"/>
+                <outlet property="ava3" destination="3sa-zv-jUb" id="zhZ-TM-cX8"/>
+                <outlet property="ava4" destination="P8U-eS-zfh" id="a0M-Gb-tKx"/>
+                <outlet property="ava5" destination="OOV-QW-tcX" id="jpQ-xp-Jkk"/>
+                <outlet property="titleLabel" destination="Gd7-hi-mR1" id="6Cp-wf-zOI"/>
+                <outlet property="view" destination="iN0-l3-epB" id="CzH-cM-s2I"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
