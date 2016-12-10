@@ -12,6 +12,7 @@ class VVCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var numLabel: UILabel!
     
     static let reuseIdentifier = "DataItemCell"
     override func awakeFromNib() {

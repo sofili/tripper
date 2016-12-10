@@ -132,11 +132,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
             print("collectionViewContent not set yet.")
             return cell
         }
+        
+        cell.titleLabel?.text = ""
+        cell.genreLabel?.text = ""
         if scenes.count >= indexPath.item {
             print("\(scenes[indexPath.item].stringValue).jpg")
             cell.setImage("\(scenes[indexPath.item].stringValue).jpg")
-            cell.titleLabel?.text = self.collectionViewContent?["title"].stringValue
-            cell.genreLabel?.text = (self.collectionViewContent?["genre"].stringValue)! + " | " + (self.collectionViewContent?["year"].stringValue)!
+            if indexPath.item == 0 {
+                cell.titleLabel?.text = self.collectionViewContent?["title"].stringValue
+                cell.genreLabel?.text = (self.collectionViewContent?["genre"].stringValue)! + " | " + (self.collectionViewContent?["year"].stringValue)!
+            }
+        }
+        
+        if scenes.count > 1 {
+            cell.numLabel?.text = "\(indexPath.item + 1) / \(scenes.count)"
+        } else {
+            cell.numLabel?.text = ""
         }
 //        print(indexPath.item)
 //        cell.setImage(indexPath.item)
