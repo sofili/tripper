@@ -135,12 +135,20 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         
         cell.titleLabel?.text = ""
         cell.genreLabel?.text = ""
+        cell.tomatoLabel?.text = ""
+        cell.tomatoIcon?.isHidden = true
         if scenes.count >= indexPath.item {
             print("\(scenes[indexPath.item].stringValue).jpg")
             cell.setImage("\(scenes[indexPath.item].stringValue).jpg")
             if indexPath.item == 0 {
                 cell.titleLabel?.text = self.collectionViewContent?["title"].stringValue
                 cell.genreLabel?.text = (self.collectionViewContent?["genre"].stringValue)! + " | " + (self.collectionViewContent?["year"].stringValue)!
+                if let tomato = self.collectionViewContent?["tomato"].int {
+                    cell.tomatoLabel?.text = "\(tomato)%"
+                    cell.tomatoIcon?.isHidden = false
+                }
+                
+                
             }
         }
         

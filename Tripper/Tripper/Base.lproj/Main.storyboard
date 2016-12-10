@@ -117,6 +117,8 @@
                                             <outlet property="imageView" destination="q7F-If-Yzg" id="gyO-uB-IXI"/>
                                             <outlet property="numLabel" destination="CI5-ba-5Kn" id="2WR-aB-Toy"/>
                                             <outlet property="titleLabel" destination="Hpf-3J-b2v" id="OU5-Bd-EXg"/>
+                                            <outlet property="tomatoIcon" destination="nZT-Cd-zi8" id="YPN-ok-Dgf"/>
+                                            <outlet property="tomatoLabel" destination="r65-Ed-1lC" id="Y6A-GO-08g"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
