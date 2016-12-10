@@ -221,19 +221,6 @@
                                             <action selector="seeAllNRT:" destination="HCc-OG-sdB" eventType="touchUpInside" id="TvW-aN-mJ7"/>
                                         </connections>
                                     </button>
-<<<<<<< HEAD
-=======
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-Iv-GXf">
-                                        <rect key="frame" x="320" y="583" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="See all">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="seeAllCDG:" destination="HCc-OG-sdB" eventType="touchUpInside" id="kJW-d3-eyB"/>
-                                        </connections>
-                                    </button>
->>>>>>> 9465538e9e84a9882aef430e8a47540da5535434
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="sfo" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-ye-EVZ">
                                         <rect key="frame" x="0.0" y="71" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -351,7 +338,6 @@
                                             <outlet property="delegate" destination="HCc-OG-sdB" id="WCa-lZ-mLX"/>
                                         </connections>
                                     </collectionView>
-<<<<<<< HEAD
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-Iv-GXf">
                                         <rect key="frame" x="345" y="547" width="54" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -360,15 +346,7 @@
                                             <color key="titleColor" red="0.35897435900000002" green="0.35897435900000002" blue="0.35897435900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="seeAllNRT:" destination="HCc-OG-sdB" eventType="touchUpInside" id="6Bw-MO-NIS"/>
-                                            <action selector="seeAllSFO:" destination="HCc-OG-sdB" eventType="touchUpInside" id="mNK-x1-82c"/>
-=======
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LD1-Kl-MFt">
-                                        <rect key="frame" x="0.0" y="42" width="262" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <action selector="secretEventTap" destination="HCc-OG-sdB" eventType="touchUpInside" id="Jqc-Hh-Gtn"/>
->>>>>>> 9465538e9e84a9882aef430e8a47540da5535434
+                                            <action selector="seeAllCDG:" destination="HCc-OG-sdB" eventType="touchUpInside" id="0sU-3R-0TL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -403,14 +381,10 @@
         <!--Navigation Controller-->
         <scene sceneID="XOi-X4-dP3">
             <objects>
-<<<<<<< HEAD
                 <navigationController navigationBarHidden="YES" id="vRK-x2-wRv" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-=======
-                <navigationController id="vRK-x2-wRv" sceneMemberID="viewController">
->>>>>>> 9465538e9e84a9882aef430e8a47540da5535434
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Hna-FE-6jz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hna-FE-6jz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
