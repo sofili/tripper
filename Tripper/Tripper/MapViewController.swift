@@ -135,6 +135,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         if scenes.count >= indexPath.item {
             print("\(scenes[indexPath.item].stringValue).jpg")
             cell.setImage("\(scenes[indexPath.item].stringValue).jpg")
+            cell.titleLabel?.text = self.collectionViewContent?["title"].stringValue
+            cell.genreLabel?.text = (self.collectionViewContent?["genre"].stringValue)! + " | " + (self.collectionViewContent?["year"].stringValue)!
         }
 //        print(indexPath.item)
 //        cell.setImage(indexPath.item)

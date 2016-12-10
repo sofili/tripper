@@ -30,33 +30,80 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="VVj-nz-G9F">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="412" height="219"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VVCell" id="bab-dK-dRN" customClass="VVCollectionViewCell" customModule="Tripper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="7" width="412" height="219"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="219"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7F-If-Yzg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="412" height="219"/>
                                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Rock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hpf-3J-b2v">
+                                                    <rect key="frame" x="20" y="144" width="253" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="omv-yu-6tj"/>
+                                                        <constraint firstAttribute="width" constant="253" id="t01-rt-kvO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action | Adventure | 1996" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-HU-j1h">
+                                                    <rect key="frame" x="20" y="179" width="326" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="xbu-Fk-rPz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="95%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r65-Ed-1lC" userLabel="tomato">
+                                                    <rect key="frame" x="372" y="179" width="32" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="MtU-xu-Xid"/>
+                                                        <constraint firstAttribute="width" constant="32" id="fiA-1w-JXh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="nZT-Cd-zi8" userLabel="tomato_icon">
+                                                    <rect key="frame" x="350" y="179" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="5ns-2X-yin"/>
+                                                        <constraint firstAttribute="width" constant="16" id="fth-th-A0E"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="Hpf-3J-b2v" firstAttribute="leading" secondItem="6bk-HU-j1h" secondAttribute="leading" id="2Dh-MH-SIg"/>
                                             <constraint firstItem="q7F-If-Yzg" firstAttribute="top" secondItem="bab-dK-dRN" secondAttribute="top" id="2tB-ti-i9N"/>
+                                            <constraint firstItem="r65-Ed-1lC" firstAttribute="top" secondItem="6bk-HU-j1h" secondAttribute="top" id="DC3-Y7-9gf"/>
                                             <constraint firstAttribute="bottom" secondItem="q7F-If-Yzg" secondAttribute="bottom" id="MTa-FR-LGP"/>
                                             <constraint firstItem="q7F-If-Yzg" firstAttribute="leading" secondItem="bab-dK-dRN" secondAttribute="leading" id="Nnm-7C-V4G"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="6bk-HU-j1h" secondAttribute="bottom" constant="12" id="Sye-Kf-etp"/>
+                                            <constraint firstItem="r65-Ed-1lC" firstAttribute="leading" secondItem="nZT-Cd-zi8" secondAttribute="trailing" constant="6" id="Xi9-bk-8vE"/>
                                             <constraint firstAttribute="trailing" secondItem="q7F-If-Yzg" secondAttribute="trailing" id="bjI-Ph-rQn"/>
+                                            <constraint firstItem="6bk-HU-j1h" firstAttribute="leading" secondItem="bab-dK-dRN" secondAttribute="leadingMargin" constant="12" id="dJa-7T-lVx"/>
+                                            <constraint firstItem="6bk-HU-j1h" firstAttribute="top" secondItem="Hpf-3J-b2v" secondAttribute="bottom" constant="2" id="g8i-JP-B1A"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="6bk-HU-j1h" secondAttribute="trailing" constant="58" id="gzM-6w-D8b"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="r65-Ed-1lC" secondAttribute="trailing" id="lFI-ag-pxL"/>
+                                            <constraint firstItem="nZT-Cd-zi8" firstAttribute="centerY" secondItem="r65-Ed-1lC" secondAttribute="centerY" id="sQH-dq-KCr"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="genreLabel" destination="6bk-HU-j1h" id="ZQy-2a-whv"/>
                                             <outlet property="imageView" destination="q7F-If-Yzg" id="gyO-uB-IXI"/>
+                                            <outlet property="titleLabel" destination="Hpf-3J-b2v" id="OU5-Bd-EXg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -134,19 +181,19 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXY-Bt-mqv">
-                                        <rect key="frame" x="117.00000000000001" y="72" width="54.333333333333357" height="18"/>
+                                        <rect key="frame" x="117" y="72" width="55" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPERIENCES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Og-ft-TG6">
-                                        <rect key="frame" x="201.33333333333331" y="72" width="100.33333333333331" height="18"/>
+                                        <rect key="frame" x="202" y="72" width="101" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLACES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APE-MT-2vI">
-                                        <rect key="frame" x="331.66666666666669" y="72" width="56.666666666666629" height="18"/>
+                                        <rect key="frame" x="333" y="72" width="57" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -384,7 +431,7 @@
                 <navigationController navigationBarHidden="YES" id="vRK-x2-wRv" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hna-FE-6jz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Hna-FE-6jz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -435,5 +482,6 @@
     <resources>
         <image name="head_bg" width="375" height="126"/>
         <image name="left_arrow" width="19" height="26"/>
+        <image name="tomato" width="23" height="24"/>
     </resources>
 </document>
