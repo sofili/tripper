@@ -31,6 +31,7 @@ class DetailViewController: InteractiveViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        batchUpdateAvatar()
         self.titleLabel.text = self.content?["title"].stringValue
 //        self.imageView.image = UIImage(named: "t\(self.ind + 1).jpg")
         
@@ -59,6 +60,12 @@ class DetailViewController: InteractiveViewController {
         ava3.makeAvatar()
         ava4.makeAvatar()
         ava5.makeAvatar()
+    }
+    
+    @IBAction func tapToVUDU() {
+        if let url = URL(string: "http://www.vudu.com/movies/#!content/12579/The-Rock") {
+            UIApplication.shared.openURL(url)
+        }
     }
     
 }
