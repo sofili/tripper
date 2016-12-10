@@ -45,13 +45,46 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+        UIApplication.shared.isStatusBarHidden = true
+        searchBar.resignFirstResponder()
+//        self.searchBar.backgroundColor = .white
+        
+//        self.searchBar.translatesAutoresizingMaskIntoConstraints = false
+        self.searchBar.backgroundImage = UIImage(named: "search_bg")
+        
+    }
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.layer.borderWidth = 0
+        textFieldInsideSearchBar?.layer.borderColor = UIColor.clear.cgColor
+        textFieldInsideSearchBar?.background = nil
+        textFieldInsideSearchBar?.borderStyle = .none
         
-        textFieldInsideSearchBar?.textColor = .white
+        
+        textFieldInsideSearchBar?.textColor = .black
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = .gray
+        
+        
         let s = self.scrollView.bounds.size
         self.scrollView.contentSize = CGSize(width: s.width, height: 900.0)
+        self.searchBar.setImage(UIImage(named:"search"), for: .search, state: .normal)
+        
+        
+//        _searchBar = [[UISearchBar alloc]init];
+//        self.searchBar.backgroundColor = .white
+        
+        self.searchBar.translatesAutoresizingMaskIntoConstraints = false
+        
+
+
     }
     
     @IBAction func seeAllSFO(_ sender: UIButton) {
@@ -104,13 +137,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     }
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        
         if searchBar.text?.lowercased() == "sfo" || searchBar.text?.lowercased() == "san francisco" {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
             
@@ -122,6 +156,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             
         }
+        searchBar.text = ""
         
     }
 }

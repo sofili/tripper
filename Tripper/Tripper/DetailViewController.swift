@@ -17,6 +17,9 @@ class DetailViewController: InteractiveViewController {
     var content: JSON?
     var ind: Int = 0
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = self.content?["title"].stringValue

@@ -42,6 +42,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         self.mapView.isMyLocationEnabled = true
         
         
+        
         self.view.insertSubview(mapView, at: 0)
 
         
@@ -60,7 +61,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         super.viewDidAppear(animated)
         self.collectionViewFlowLayout.itemSize = self.collectionView.frame.size
     }
-    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     private func createMarker() {
 
         _ = self.contents.map { a in
@@ -71,6 +74,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
             marker.title = a["title"].stringValue
             marker.snippet = a["snippet"].stringValue
             marker.appearAnimation = kGMSMarkerAnimationPop
+            
+            marker.icon = UIImage(named: "dropin")
             marker.map = self.mapView
         }
         
@@ -122,6 +127,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         
     }
 
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
         let content = self.contents[indexPath.item]
