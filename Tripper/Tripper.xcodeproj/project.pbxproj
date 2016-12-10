@@ -45,6 +45,7 @@
 		09C429E41DFB4D240079F017 /* cdg.json in Resources */ = {isa = PBXBuildFile; fileRef = 09C429E31DFB4D240079F017 /* cdg.json */; };
 		09DCAABE1DF9C601003A287F /* sfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 09DCAABD1DF9C601003A287F /* sfo.json */; };
 		1AD2F6ADDDDF733590907111 /* Pods_Tripper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E58E087FE4A339780D3BD46 /* Pods_Tripper.framework */; };
+		B081C48D1DFB9DD300D92D2E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B081C48C1DFB9DD300D92D2E /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		09DCAABD1DF9C601003A287F /* sfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sfo.json; sourceTree = "<group>"; };
 		376C3A77E1C2F66ACBA64774 /* Pods-Tripper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tripper/Pods-Tripper.debug.xcconfig"; sourceTree = "<group>"; };
 		4E58E087FE4A339780D3BD46 /* Pods_Tripper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B081C48C1DFB9DD300D92D2E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				0937636B1DE574D000650271 /* AppDelegate.swift */,
+				B081C48C1DFB9DD300D92D2E /* DetailViewController.xib */,
 				0937636D1DE574D000650271 /* MapViewController.swift */,
 				09C429831DFB13F60079F017 /* HomeViewController.swift */,
 				096254A31DF0898C00FA2335 /* DetailViewController.swift */,
@@ -271,6 +274,7 @@
 				09C429861DFB360C0079F017 /* nrt.json in Resources */,
 				09C429DF1DFB47D00079F017 /* 629657_3.jpg in Resources */,
 				093763761DE574D000650271 /* LaunchScreen.storyboard in Resources */,
+				B081C48D1DFB9DD300D92D2E /* DetailViewController.xib in Resources */,
 				09C429E41DFB4D240079F017 /* cdg.json in Resources */,
 				09B3ACF61DEF43D800880AE7 /* content.json in Resources */,
 				09C429DD1DFB47D00079F017 /* 629657_1.jpg in Resources */,
