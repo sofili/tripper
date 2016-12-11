@@ -43,7 +43,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="412" height="219"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7F-If-Yzg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q7F-If-Yzg" userLabel="bg">
                                                     <rect key="frame" x="0.0" y="0.0" width="412" height="219"/>
                                                     <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                                 </imageView>
@@ -93,11 +93,30 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(4.2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsi-SQ-bbW" userLabel="rating">
+                                                    <rect key="frame" x="370" y="159" width="32" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="9SG-mx-OaX"/>
+                                                        <constraint firstAttribute="width" constant="32" id="ozS-Ox-JzX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_off" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-bZ-oN6" userLabel="rating_icon">
+                                                    <rect key="frame" x="302" y="161.33333333333334" width="64" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="QhQ-Vj-nFj"/>
+                                                        <constraint firstAttribute="height" constant="12" id="spd-OV-8Vx"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="D8H-bZ-oN6" firstAttribute="centerY" secondItem="Hsi-SQ-bbW" secondAttribute="centerY" id="0XT-bn-eWD"/>
                                             <constraint firstItem="Hpf-3J-b2v" firstAttribute="leading" secondItem="6bk-HU-j1h" secondAttribute="leading" id="2Dh-MH-SIg"/>
                                             <constraint firstItem="q7F-If-Yzg" firstAttribute="top" secondItem="bab-dK-dRN" secondAttribute="top" id="2tB-ti-i9N"/>
+                                            <constraint firstItem="r65-Ed-1lC" firstAttribute="top" secondItem="Hsi-SQ-bbW" secondAttribute="bottom" constant="4" id="8UI-bs-yFr"/>
                                             <constraint firstItem="r65-Ed-1lC" firstAttribute="top" secondItem="6bk-HU-j1h" secondAttribute="top" id="DC3-Y7-9gf"/>
                                             <constraint firstAttribute="bottom" secondItem="q7F-If-Yzg" secondAttribute="bottom" id="MTa-FR-LGP"/>
                                             <constraint firstItem="q7F-If-Yzg" firstAttribute="leading" secondItem="bab-dK-dRN" secondAttribute="leading" id="Nnm-7C-V4G"/>
@@ -108,14 +127,18 @@
                                             <constraint firstItem="6bk-HU-j1h" firstAttribute="leading" secondItem="bab-dK-dRN" secondAttribute="leadingMargin" constant="12" id="dJa-7T-lVx"/>
                                             <constraint firstItem="6bk-HU-j1h" firstAttribute="top" secondItem="Hpf-3J-b2v" secondAttribute="bottom" constant="2" id="g8i-JP-B1A"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="6bk-HU-j1h" secondAttribute="trailing" constant="58" id="gzM-6w-D8b"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Hsi-SQ-bbW" secondAttribute="trailing" constant="2" id="kOX-1u-HEW"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="r65-Ed-1lC" secondAttribute="trailing" id="lFI-ag-pxL"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="CI5-ba-5Kn" secondAttribute="trailing" constant="6" id="pHa-Be-JU2"/>
                                             <constraint firstItem="nZT-Cd-zi8" firstAttribute="centerY" secondItem="r65-Ed-1lC" secondAttribute="centerY" id="sQH-dq-KCr"/>
+                                            <constraint firstItem="Hsi-SQ-bbW" firstAttribute="leading" secondItem="D8H-bZ-oN6" secondAttribute="trailing" constant="4" id="x7c-jD-Br7"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="genreLabel" destination="6bk-HU-j1h" id="ZQy-2a-whv"/>
                                             <outlet property="imageView" destination="q7F-If-Yzg" id="gyO-uB-IXI"/>
                                             <outlet property="numLabel" destination="CI5-ba-5Kn" id="2WR-aB-Toy"/>
+                                            <outlet property="ratingIcon" destination="D8H-bZ-oN6" id="APh-uq-8kH"/>
+                                            <outlet property="ratingLabel" destination="Hsi-SQ-bbW" id="sWt-AV-Gcb"/>
                                             <outlet property="titleLabel" destination="Hpf-3J-b2v" id="OU5-Bd-EXg"/>
                                             <outlet property="tomatoIcon" destination="nZT-Cd-zi8" id="YPN-ok-Dgf"/>
                                             <outlet property="tomatoLabel" destination="r65-Ed-1lC" id="Y6A-GO-08g"/>
@@ -462,6 +485,7 @@
     <resources>
         <image name="head_bg" width="375" height="126"/>
         <image name="left_arrow" width="19" height="26"/>
-        <image name="tomato" width="23" height="24"/>
+        <image name="rating_off" width="162" height="30"/>
+        <image name="tomato" width="11" height="12"/>
     </resources>
 </document>

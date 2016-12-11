@@ -10,10 +10,10 @@
 		0937636C1DE574D000650271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937636B1DE574D000650271 /* AppDelegate.swift */; };
 		0937636E1DE574D000650271 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937636D1DE574D000650271 /* MapViewController.swift */; };
 		093763711DE574D000650271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0937636F1DE574D000650271 /* Main.storyboard */; };
-		093763731DE574D000650271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 093763721DE574D000650271 /* Assets.xcassets */; };
 		093763761DE574D000650271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093763741DE574D000650271 /* LaunchScreen.storyboard */; };
 		096254A21DF0895E00FA2335 /* InteractiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096254A11DF0895E00FA2335 /* InteractiveViewController.swift */; };
 		096254A41DF0898C00FA2335 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096254A31DF0898C00FA2335 /* DetailViewController.swift */; };
+		0979FF381DFDC538004C99A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0979FF371DFDC538004C99A7 /* Assets.xcassets */; };
 		09A36ACD1DF1D8C7004D7211 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A36ACC1DF1D8C7004D7211 /* Util.swift */; };
 		09B3ACEB1DEF225E00880AE7 /* VVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B3ACEA1DEF225E00880AE7 /* VVCollectionViewCell.swift */; };
 		09B3ACF61DEF43D800880AE7 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 09B3ACF51DEF43D800880AE7 /* content.json */; };
@@ -54,11 +54,11 @@
 		0937636B1DE574D000650271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0937636D1DE574D000650271 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		093763701DE574D000650271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		093763721DE574D000650271 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093763751DE574D000650271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		093763771DE574D000650271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096254A11DF0895E00FA2335 /* InteractiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveViewController.swift; sourceTree = "<group>"; };
 		096254A31DF0898C00FA2335 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0979FF371DFDC538004C99A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A36ACC1DF1D8C7004D7211 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		09B3ACEA1DEF225E00880AE7 /* VVCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVCollectionViewCell.swift; sourceTree = "<group>"; };
 		09B3ACF51DEF43D800880AE7 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 		0937636A1DE574D000650271 /* Tripper */ = {
 			isa = PBXGroup;
 			children = (
+				0979FF371DFDC538004C99A7 /* Assets.xcassets */,
 				0937636B1DE574D000650271 /* AppDelegate.swift */,
 				B081C48C1DFB9DD300D92D2E /* DetailViewController.xib */,
 				0937636D1DE574D000650271 /* MapViewController.swift */,
@@ -134,7 +135,6 @@
 				096254A31DF0898C00FA2335 /* DetailViewController.swift */,
 				09B3ACEA1DEF225E00880AE7 /* VVCollectionViewCell.swift */,
 				0937636F1DE574D000650271 /* Main.storyboard */,
-				093763721DE574D000650271 /* Assets.xcassets */,
 				093763741DE574D000650271 /* LaunchScreen.storyboard */,
 				093763771DE574D000650271 /* Info.plist */,
 				096254A11DF0895E00FA2335 /* InteractiveViewController.swift */,
@@ -282,7 +282,6 @@
 				09C429D91DFB47D00079F017 /* 607384_0.jpg in Resources */,
 				09C429CC1DFB47D00079F017 /* 5433_0.jpg in Resources */,
 				09C429D81DFB47D00079F017 /* 534815_0.jpg in Resources */,
-				093763731DE574D000650271 /* Assets.xcassets in Resources */,
 				09C429D41DFB47D00079F017 /* 37867_0.jpg in Resources */,
 				09C429CD1DFB47D00079F017 /* 5897_0.jpg in Resources */,
 				09C429DC1DFB47D00079F017 /* 629657_0.jpg in Resources */,
@@ -291,6 +290,7 @@
 				09C429DB1DFB47D00079F017 /* 607384_2.jpg in Resources */,
 				09DCAABE1DF9C601003A287F /* sfo.json in Resources */,
 				09C429CF1DFB47D00079F017 /* 8914_0.jpg in Resources */,
+				0979FF381DFDC538004C99A7 /* Assets.xcassets in Resources */,
 				09C429D31DFB47D00079F017 /* 14817_0.jpg in Resources */,
 				093763711DE574D000650271 /* Main.storyboard in Resources */,
 				09C429D61DFB47D00079F017 /* 401124_0.jpg in Resources */,

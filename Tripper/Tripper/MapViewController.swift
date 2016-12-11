@@ -137,6 +137,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         cell.genreLabel?.text = ""
         cell.tomatoLabel?.text = ""
         cell.tomatoIcon?.isHidden = true
+        cell.ratingLabel?.text = ""
+        cell.ratingIcon?.isHidden = true
         if scenes.count >= indexPath.item {
             print("\(scenes[indexPath.item].stringValue).jpg")
             cell.setImage("\(scenes[indexPath.item].stringValue).jpg")
@@ -147,7 +149,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
                     cell.tomatoLabel?.text = "\(tomato)%"
                     cell.tomatoIcon?.isHidden = false
                 }
-                
+                if let rating = self.collectionViewContent?["rating"].float {
+                    cell.ratingLabel?.text = "(" + String(format: "%.1f", rating) + ")"
+                    cell.ratingIcon?.isHidden = false
+                }
                 
             }
         }
