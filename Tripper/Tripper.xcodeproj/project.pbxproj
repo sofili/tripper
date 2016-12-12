@@ -58,6 +58,10 @@
 		09DCAABE1DF9C601003A287F /* sfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 09DCAABD1DF9C601003A287F /* sfo.json */; };
 		1AD2F6ADDDDF733590907111 /* Pods_Tripper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E58E087FE4A339780D3BD46 /* Pods_Tripper.framework */; };
 		B081C48D1DFB9DD300D92D2E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B081C48C1DFB9DD300D92D2E /* DetailViewController.xib */; };
+		B081C4921DFF690400D92D2E /* 37867-l.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B081C48E1DFF690400D92D2E /* 37867-l.jpeg */; };
+		B081C4931DFF690400D92D2E /* 454501-l.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B081C48F1DFF690400D92D2E /* 454501-l.jpeg */; };
+		B081C4941DFF690400D92D2E /* 5897-l.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B081C4901DFF690400D92D2E /* 5897-l.jpeg */; };
+		B081C4951DFF690400D92D2E /* 5433-l.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B081C4911DFF690400D92D2E /* 5433-l.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,10 @@
 		376C3A77E1C2F66ACBA64774 /* Pods-Tripper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tripper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tripper/Pods-Tripper.debug.xcconfig"; sourceTree = "<group>"; };
 		4E58E087FE4A339780D3BD46 /* Pods_Tripper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tripper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B081C48C1DFB9DD300D92D2E /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		B081C48E1DFF690400D92D2E /* 37867-l.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "37867-l.jpeg"; sourceTree = "<group>"; };
+		B081C48F1DFF690400D92D2E /* 454501-l.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "454501-l.jpeg"; sourceTree = "<group>"; };
+		B081C4901DFF690400D92D2E /* 5897-l.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5897-l.jpeg"; sourceTree = "<group>"; };
+		B081C4911DFF690400D92D2E /* 5433-l.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5433-l.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,10 @@
 		0966FF851DFF56390086F847 /* poster */ = {
 			isa = PBXGroup;
 			children = (
+				B081C48E1DFF690400D92D2E /* 37867-l.jpeg */,
+				B081C48F1DFF690400D92D2E /* 454501-l.jpeg */,
+				B081C4901DFF690400D92D2E /* 5897-l.jpeg */,
+				B081C4911DFF690400D92D2E /* 5433-l.jpeg */,
 				0966FF861DFF56390086F847 /* 12579-l.jpg */,
 				0966FF871DFF56390086F847 /* 14817-l.jpg */,
 				0966FF881DFF56390086F847 /* 197950-l.jpg */,
@@ -329,8 +341,10 @@
 				0966FF9C1DFF56390086F847 /* 669928-l.jpg in Resources */,
 				0966FF9A1DFF56390086F847 /* 607384-l.jpg in Resources */,
 				09C429D91DFB47D00079F017 /* 607384_0.jpg in Resources */,
+				B081C4941DFF690400D92D2E /* 5897-l.jpeg in Resources */,
 				09C429CC1DFB47D00079F017 /* 5433_0.jpg in Resources */,
 				09C429D81DFB47D00079F017 /* 534815_0.jpg in Resources */,
+				B081C4931DFF690400D92D2E /* 454501-l.jpeg in Resources */,
 				0966FF951DFF56390086F847 /* 37867-l.jpg in Resources */,
 				0966FF991DFF56390086F847 /* 5897-l.jpg in Resources */,
 				09C429D41DFB47D00079F017 /* 37867_0.jpg in Resources */,
@@ -338,6 +352,7 @@
 				0966FF931DFF56390086F847 /* 14817-l.jpg in Resources */,
 				09C429CD1DFB47D00079F017 /* 5897_0.jpg in Resources */,
 				09C429DC1DFB47D00079F017 /* 629657_0.jpg in Resources */,
+				B081C4921DFF690400D92D2E /* 37867-l.jpeg in Resources */,
 				09C429D51DFB47D00079F017 /* 197950_0.jpg in Resources */,
 				09C429DA1DFB47D00079F017 /* 607384_1.jpg in Resources */,
 				09C429DB1DFB47D00079F017 /* 607384_2.jpg in Resources */,
@@ -347,6 +362,7 @@
 				0979FF381DFDC538004C99A7 /* Assets.xcassets in Resources */,
 				09C429D31DFB47D00079F017 /* 14817_0.jpg in Resources */,
 				093763711DE574D000650271 /* Main.storyboard in Resources */,
+				B081C4951DFF690400D92D2E /* 5433-l.jpeg in Resources */,
 				0966FF921DFF56390086F847 /* 12579-l.jpg in Resources */,
 				09C429D61DFB47D00079F017 /* 401124_0.jpg in Resources */,
 				0966FF9D1DFF56390086F847 /* 8914-l.jpg in Resources */,
