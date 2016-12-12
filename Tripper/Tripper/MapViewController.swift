@@ -119,6 +119,7 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         self.collectionViewContent = content
         //        print(content)
         self.collectionView.reloadData()
+        selectedContent = content
         return false
     }
     
@@ -182,14 +183,9 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         vc.allowedDismissDirection = .bottom
         vc.directionLock = true
         vc.maskType = .black
-        vc.content = content
+        vc.content = selectedContent
         vc.ind = indexPath.item
         
-        //            vc.titleLabel.text = content["title"].stringValue
-        //            vc.imageView.image = UIImage(named: "t\(indexPath.item + 1).jpg")
-        
-        //
-        //
         vc.showInteractive()
     }
     
