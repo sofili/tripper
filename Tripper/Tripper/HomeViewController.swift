@@ -273,7 +273,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.setData(city: .nrt)
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
+            vc.setData(city: .cdg)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         searchBar.text = ""
         
