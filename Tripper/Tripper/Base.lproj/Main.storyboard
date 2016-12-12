@@ -104,7 +104,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating_off" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-bZ-oN6" userLabel="rating_icon">
-                                                    <rect key="frame" x="302" y="161.33333333333334" width="64" height="12"/>
+                                                    <rect key="frame" x="302" y="161" width="64" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="QhQ-Vj-nFj"/>
                                                         <constraint firstAttribute="height" constant="12" id="spd-OV-8Vx"/>

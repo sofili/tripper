@@ -12,7 +12,10 @@ import SwiftyJSON
 class DetailViewController: InteractiveViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var generLbl: UILabel!
+    @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var synopsisLbl: UILabel!
     @IBOutlet weak var ava1: UIImageView!
     @IBOutlet weak var ava2: UIImageView!
     @IBOutlet weak var ava3: UIImageView!
@@ -21,6 +24,7 @@ class DetailViewController: InteractiveViewController {
     
     var content: JSON?
     var ind: Int = 0
+    
     
     convenience init() {
         self.init(nibName: "DetailViewController", bundle: nil)
@@ -34,6 +38,24 @@ class DetailViewController: InteractiveViewController {
         batchUpdateAvatar()
         self.titleLabel.text = self.content?["title"].stringValue
 //        self.imageView.image = UIImage(named: "t\(self.ind + 1).jpg")
+        
+        if let imageFileName = content?["scenes"][0].string {
+            imageView.image =  UIImage(named: "\(imageFileName).jpg")
+        }
+        
+        // Set poster
+        // http://images2.vudu.com/poster2/12579-l
+        if let contentID = content?["contentId"].string {
+            posterImageView.downloadedFrom(link: "http://images2.vudu.com/poster2/\(contentID)-l")
+        }
+        
+        if let gener = content?["genre"].string {
+            generLbl.text = gener
+        }
+        
+        if let synopsis = content?["synopsis"].string {
+            synopsisLbl.text = synopsis
+        }
         
     }
     
@@ -63,7 +85,10 @@ class DetailViewController: InteractiveViewController {
     }
     
     @IBAction func tapToVUDU() {
-        if let url = URL(string: "http://www.vudu.com/movies/#!content/12579/The-Rock") {
+        guard let urlStr = content?["vuduurl"].string else {
+            return
+        }
+        if let url = URL(string: urlStr) {
             UIApplication.shared.openURL(url)
         }
     }
@@ -71,8 +96,8 @@ class DetailViewController: InteractiveViewController {
     @IBAction func backAction() {
         self.dismiss(animated: true)
     }
-    
 }
+
 
 extension UIImageView {
     func makeAvatar() {

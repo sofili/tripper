@@ -25,6 +25,7 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
     var city: City!
     
     var contents: [JSON]! = nil
+    var selectedContent: JSON? = nil
     
     var collectionViewContent: JSON? = nil
     
@@ -118,6 +119,7 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         self.collectionViewContent = content
         //        print(content)
         self.collectionView.reloadData()
+        self.selectedContent = content
         return false
     }
     
@@ -175,13 +177,12 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
-        let content = self.contents[indexPath.item]
         
         let vc = DetailViewController()
         vc.allowedDismissDirection = .bottom
         vc.directionLock = true
         vc.maskType = .black
-        vc.content = content
+        vc.content = selectedContent
         vc.ind = indexPath.item
         
         //            vc.titleLabel.text = content["title"].stringValue
@@ -189,9 +190,28 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         
         //
         //
-        
         vc.showInteractive()
     }
     
 }
 
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
+    }
+}
