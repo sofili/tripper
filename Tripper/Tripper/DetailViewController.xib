@@ -34,7 +34,7 @@
                         <constraint firstAttribute="height" constant="200" id="Nne-AA-PHC"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="theRock" translatesAutoresizingMaskIntoConstraints="NO" id="uaG-Fx-LGm">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaG-Fx-LGm">
                     <rect key="frame" x="16" y="215" width="143" height="192"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -197,7 +197,6 @@
         <image name="left_arrow" width="28" height="39"/>
         <image name="min" width="135" height="39"/>
         <image name="rating_on" width="162" height="30"/>
-        <image name="theRock" width="1000" height="1500"/>
         <image name="tomato" width="16" height="18"/>
     </resources>
 </document>
