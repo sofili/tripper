@@ -68,6 +68,10 @@ class DetailViewController: InteractiveViewController {
         }
     }
     
+    @IBAction func backAction() {
+        self.dismiss(animated: true)
+    }
+    
 }
 
 extension UIImageView {

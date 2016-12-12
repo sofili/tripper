@@ -124,8 +124,23 @@
                         <action selector="tapToVUDU" destination="-1" eventType="touchUpInside" id="Djg-az-yXc"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIR-Cu-QiE">
+                    <rect key="frame" x="18" y="19" width="28" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="Hp7-x9-UqH"/>
+                        <constraint firstAttribute="width" constant="28" id="LvL-k9-keJ"/>
+                    </constraints>
+                    <state key="normal" image="left_arrow"/>
+                    <connections>
+                        <action selector="backAction" destination="-1" eventType="touchUpInside" id="OUn-A2-72a"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HIR-Cu-QiE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="KP2-bB-gFz"/>
+                <constraint firstItem="HIR-Cu-QiE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="Nz0-gj-fTa"/>
+            </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
@@ -135,6 +150,7 @@
         <image name="ava4" width="461" height="461"/>
         <image name="ava5" width="225" height="225"/>
         <image name="ava6" width="225" height="225"/>
+        <image name="left_arrow" width="28" height="39"/>
         <image name="theRock" width="1000" height="1500"/>
     </resources>
 </document>

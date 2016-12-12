@@ -10,14 +10,15 @@ import UIKit
 import GoogleMaps
 import SwiftyJSON
 
+
 enum City: String {
     case sfo = "sfo"
     case nrt = "nrt"
     case cdg = "cdg"
 }
 
-class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
-
+public class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     var mapView: GMSMapView!
@@ -27,7 +28,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
     
     var collectionViewContent: JSON? = nil
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
@@ -41,9 +42,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
             self.contents = []
         }
     }
-
-    override func viewDidLoad() {
+    
+    override public func viewDidLoad() {
         super.viewDidLoad()
+        GMSServices.provideAPIKey("AIzaSyCx-yugcaGPCHgdkTPT3Kl5_kFZ80CFyyA")
         
         // Default SFO
         var camera = GMSCameraPosition.camera(withLatitude: 37.806592, longitude: -122.4452370, zoom: 12.0)
@@ -53,35 +55,35 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
             camera = GMSCameraPosition.camera(withLatitude: 35.6668861, longitude: 139.6751166, zoom: 12.0)
         }
         
-//        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        //        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.mapView = GMSMapView.map(withFrame: self.view.bounds, camera: camera)
         self.mapView.isMyLocationEnabled = true
         
         
         
         self.view.insertSubview(mapView, at: 0)
-
+        
         
         self.mapView.delegate = self
         self.createMarker()
         self.collectionViewFlowLayout.itemSize = self.collectionView.frame.size
-//        self.collectionView.isPagingEnabled = true
-//        self.collectionViewFlowLayout.minimumInteritemSpacing = 0;
-//        self.collectionViewFlowLayout.minimumLineSpacing = 0;
+        //        self.collectionView.isPagingEnabled = true
+        //        self.collectionViewFlowLayout.minimumInteritemSpacing = 0;
+        //        self.collectionViewFlowLayout.minimumLineSpacing = 0;
         
         
         self.collectionView.isHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.collectionViewFlowLayout.itemSize = self.collectionView.frame.size
     }
-    override var prefersStatusBarHidden: Bool {
+    override public var prefersStatusBarHidden: Bool {
         return true
     }
     private func createMarker() {
-
+        
         _ = self.contents.map { a in
             let marker = GMSMarker()
             print(a)
@@ -98,33 +100,32 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
     }
     
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+    public func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         return nil
     }
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    public func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         guard let content = marker.userData as? JSON else {
             print("no userData")
             return false
         }
         self.collectionView.isHidden = false
         self.collectionViewContent = content
-//        print(content)
+        //        print(content)
         self.collectionView.reloadData()
         return false
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.collectionViewContent?["scenes"].arrayValue.count)
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.collectionViewContent?["scenes"].arrayValue.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VVCell", for: indexPath) as? VVCollectionViewCell else {
             fatalError("no cell")
         }
@@ -162,17 +163,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         } else {
             cell.numLabel?.text = ""
         }
-//        print(indexPath.item)
-//        cell.setImage(indexPath.item)
+        //        print(indexPath.item)
+        //        cell.setImage(indexPath.item)
         
         return cell
         
     }
-
+    
     @IBAction func backAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
         let content = self.contents[indexPath.item]
         
@@ -182,7 +183,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         vc.maskType = .black
         vc.content = content
         vc.ind = indexPath.item
-        print("====\(vc.titleLabel)")
+        
         //            vc.titleLabel.text = content["title"].stringValue
         //            vc.imageView.image = UIImage(named: "t\(indexPath.item + 1).jpg")
         
@@ -191,6 +192,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UICollectionViewD
         
         vc.showInteractive()
     }
-
+    
 }
 
