@@ -46,8 +46,8 @@ class DetailViewController: InteractiveViewController {
         
         // Set poster
         // http://images2.vudu.com/poster2/12579-l
-        if let contentID = content?["contentId"].string {
-            posterImageView.image = UIImage(named: "\(contentID)-l.jpg")
+        if let posterName = content?["contentId"].stringValue {
+            posterImageView.image = UIImage(named: "\(posterName)-l.jpg")
         }
         
         if let gener = content?["genre"].string {
