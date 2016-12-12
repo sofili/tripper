@@ -324,7 +324,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="285" height="160"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BlU-Ch-z94">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BlU-Ch-z94">
                                                             <rect key="frame" x="8" y="8" width="269" height="144"/>
                                                         </imageView>
                                                     </subviews>
@@ -469,7 +469,7 @@
                 <navigationController navigationBarHidden="YES" id="vRK-x2-wRv" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Hna-FE-6jz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hna-FE-6jz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
