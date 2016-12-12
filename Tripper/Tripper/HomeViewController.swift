@@ -265,11 +265,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if searchBar.text?.lowercased() == "sfo" || searchBar.text?.lowercased() == "san francisco" {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
+                vc.setData(city: .sfo)
             
             self.navigationController?.pushViewController(vc, animated: true)
         } else if searchBar.text?.lowercased() == "nrt" || searchBar.text?.lowercased() == "tokyo" {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
-            
+                vc.setData(city: .nrt)
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
             
