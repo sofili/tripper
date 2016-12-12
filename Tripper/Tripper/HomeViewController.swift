@@ -162,22 +162,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 // MARK - Calendar
     
-    @IBAction func secretEventTap() {
-
-        
+    @IBAction func secretSFEventTap() {
         // create a corresponding local notification
-        print("user taps secret event btn")
-        let city = "San Francisco"
+        print("user taps SF secret event btn")
         let notification = UILocalNotification()
-        notification.alertBody = "Traveling to \(city), would you be interested checking out movies that were shot at there? "
+        notification.alertBody = "Around San Francisco? Would you be interested checking out movies that were shot there? "
         notification.alertAction = "Yes, take me to Tripper"
         notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
-        notification.userInfo = ["action": "goToTripper"]
+        notification.userInfo = ["action": "SF"]
         notification.category = "tripperCategory"
         UIApplication.shared.scheduleLocalNotification(notification)
-    
     }
+    
+    @IBAction func secretJPEventTap() {
+        // create a corresponding local notification
+        print("user taps JP secret event btn")
+        let notification = UILocalNotification()
+        notification.alertBody = "Traveling to Tokyo? Would you be interested checking out movies that were shot there? "
+        notification.alertAction = "Yes, take me to Tripper"
+        notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.userInfo = ["action": "JP"]
+        notification.category = "tripperCategory"
+        UIApplication.shared.scheduleLocalNotification(notification)
+    }
+    
     func checkCalendarAuthorizationStatus() {
         let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
         
