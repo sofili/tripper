@@ -69,6 +69,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override var prefersStatusBarHidden: Bool {
         return false
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField

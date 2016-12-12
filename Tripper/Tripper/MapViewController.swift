@@ -53,7 +53,7 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         if city == City.nrt {
             camera = GMSCameraPosition.camera(withLatitude: 36.245659, longitude: 137.5210113, zoom: 6.0)
         } else if city == City.cdg {
-            camera = GMSCameraPosition.camera(withLatitude: 35.6668861, longitude: 139.6751166, zoom: 12.0)
+            camera = GMSCameraPosition.camera(withLatitude: 48.853129, longitude: 2.368908, zoom: 12.0)
         }
         
         //        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
