@@ -165,9 +165,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func secretSFEventTap() {
         // create a corresponding local notification
         print("user taps SF secret event btn")
-        let city = "San Francisco"
         let notification = UILocalNotification()
-        notification.alertBody = "Traveling to \(city), would you be interested checking out movies that were shot at there? "
+        notification.alertBody = "Around San Francisco? Would you be interested checking out movies that were shot there? "
         notification.alertAction = "Yes, take me to Tripper"
         notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
@@ -179,9 +178,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func secretJPEventTap() {
         // create a corresponding local notification
         print("user taps JP secret event btn")
-        let city = "San Francisco"
         let notification = UILocalNotification()
-        notification.alertBody = "Traveling to \(city), would you be interested checking out movies that were shot at there? "
+        notification.alertBody = "Traveling to Tokyo? Would you be interested checking out movies that were shot there? "
         notification.alertAction = "Yes, take me to Tripper"
         notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound

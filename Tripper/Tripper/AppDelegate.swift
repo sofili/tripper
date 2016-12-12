@@ -39,24 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "TodoListShouldRefresh"), object: self)
-    }
-
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         // To go MapViewController, filtered by city
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "TodoListShouldRefresh"), object: self)
+        if let whereTo: String = notification.userInfo?["action"] as? String {
+            
+            let nav: UINavigationController = self.window?.rootViewController as! UINavigationController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
+            
+            if whereTo == "SF" {
+                print("should go to map SF")
+                vc.setData(city: .sfo)
+                nav.pushViewController(vc, animated: true)
+            } else if whereTo == "JP" {
+                print("should go to map JP")
+                vc.setData(city: .nrt)
+                nav.pushViewController(vc, animated: true)
+            }
+        }
     }
-    
-    private func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-    }
-
 
 }
 
