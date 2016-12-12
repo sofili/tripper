@@ -119,7 +119,6 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         self.collectionViewContent = content
         //        print(content)
         self.collectionView.reloadData()
-        self.selectedContent = content
         return false
     }
     
@@ -177,12 +176,13 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
     }
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        let content = self.contents[indexPath.item]
         
         let vc = DetailViewController()
         vc.allowedDismissDirection = .bottom
         vc.directionLock = true
         vc.maskType = .black
-        vc.content = selectedContent
+        vc.content = content
         vc.ind = indexPath.item
         
         //            vc.titleLabel.text = content["title"].stringValue
