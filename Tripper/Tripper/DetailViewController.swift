@@ -21,6 +21,7 @@ class DetailViewController: InteractiveViewController {
     @IBOutlet weak var ava3: UIImageView!
     @IBOutlet weak var ava4: UIImageView!
     @IBOutlet weak var ava5: UIImageView!
+    @IBOutlet weak var ava6: UIImageView!
     
     var content: JSON?
     var ind: Int = 0
@@ -82,6 +83,7 @@ class DetailViewController: InteractiveViewController {
         ava3.makeAvatar()
         ava4.makeAvatar()
         ava5.makeAvatar()
+        ava6.makeAvatar()
     }
     
     @IBAction func tapToVUDU() {
