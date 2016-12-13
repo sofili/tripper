@@ -184,7 +184,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let notification = UILocalNotification()
         notification.alertBody = "Traveling to Tokyo? Would you be interested checking out movies that were shot there? "
         notification.alertAction = "Yes, take me to Tripper"
-        notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
+        notification.fireDate = NSDate(timeIntervalSinceNow: +15) as Date
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["action": "JP"]
         notification.category = "tripperCategory"
@@ -227,11 +227,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if calendar.title == "Calendar" {
                 
                 let now = Date()
-                let oneMonthAfter = NSDate(timeIntervalSinceNow: +30*24*3600)
+                let oneWeekAfter = NSDate(timeIntervalSinceNow: +8*24*3600)
                 
-                let predicate = eventStore.predicateForEvents(withStart: now, end: oneMonthAfter as Date, calendars: [calendar])
+                let predicate = eventStore.predicateForEvents(withStart: now, end: oneWeekAfter as Date, calendars: [calendar])
                 
                 self.events = eventStore.events(matching: predicate)
+                print(self.events)
             }
         }
     }
@@ -250,13 +251,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             gotoTripperAction.isDestructive = false
             gotoTripperAction.isAuthenticationRequired = true
             
-//            var trashAction = UIMutableUserNotificationAction()
-//            trashAction.identifier = "trashAction"
-//            trashAction.title = "Delete list"
-//            trashAction.activationMode = UIUserNotificationActivationMode.Background
-//            trashAction.destructive = true
-//            trashAction.authenticationRequired = true
-//            
             // Specify the category related to the above actions.
             var tripperCategory = UIMutableUserNotificationCategory()
             tripperCategory.identifier = "tripperCategory"

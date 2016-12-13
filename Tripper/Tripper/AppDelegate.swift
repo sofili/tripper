@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
      //   Thread.sleep(forTimeInterval: 2.0)
         
+        // backgruond fetch calendar events
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         return true
     }
 
@@ -61,6 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"HomeViewController") as! HomeViewController
+        vc.loadCalendars()
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
 }
 
