@@ -143,14 +143,23 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let img = self.sfo[indexPath.item]["scenes"][0].string {
                 cell.setImage("\(img).jpg")
             }
+            if let title = self.sfo[indexPath.item]["title"].string {
+                cell.setTitle(title: title)
+            }
+            
         } else  if collectionView.restorationIdentifier == "nrt" {
             if let img = self.nrt[indexPath.item]["scenes"][0].string {
-                
                 cell.setImage("\(img).jpg")
+            }
+            if let title = self.nrt[indexPath.item]["title"].string {
+                cell.setTitle(title: title)
             }
         } else  if collectionView.restorationIdentifier == "cdg" {
             if let img = self.cdg[indexPath.item]["scenes"][0].string {
                 cell.setImage("\(img).jpg")
+            }
+            if let title = self.cdg[indexPath.item]["title"].string {
+                cell.setTitle(title: title)
             }
         }
         
