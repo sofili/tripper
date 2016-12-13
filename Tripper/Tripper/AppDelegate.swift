@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyCx-yugcaGPCHgdkTPT3Kl5_kFZ80CFyyA")
         GMSPlacesClient.provideAPIKey("AIzaSyCx-yugcaGPCHgdkTPT3Kl5_kFZ80CFyyA")
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
-//        Thread.sleep(forTimeInterval: 20.0)
+        Thread.sleep(forTimeInterval: 2.0)
         
         // backgruond fetch calendar events
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
