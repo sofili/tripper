@@ -166,16 +166,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 // MARK - Calendar
     
     @IBAction func secretSFEventTap() {
-        // create a corresponding local notification
-        print("user taps SF secret event btn")
-        let notification = UILocalNotification()
-        notification.alertBody = "Around San Francisco? Would you be interested checking out movies that were shot there? "
-        notification.alertAction = "Yes, take me to Tripper"
-        notification.fireDate = NSDate(timeIntervalSinceNow: +4) as Date
-        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
-        notification.userInfo = ["action": "SF"]
-        notification.category = "tripperCategory"
-        UIApplication.shared.scheduleLocalNotification(notification)
+        
+        let banner = Banner(title: "Around San Francisco?", subtitle: "Interested in movies that were shot here?", image: UIImage(named: "dropPin"), backgroundColor: UIColor(red:190.00/255.0, green:101.0/255.0, blue:249/255.0, alpha:1.00))
+        banner.didTapBlock = {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
+            vc.setData(city: .sfo)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        banner.dismissesOnTap = true
+        banner.show(duration: 3.0)
     }
     
     @IBAction func secretJPEventTap() {
@@ -232,7 +232,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 let predicate = eventStore.predicateForEvents(withStart: now, end: oneWeekAfter as Date, calendars: [calendar])
                 
                 self.events = eventStore.events(matching: predicate)
-                print(self.events)
+//                print(self.events)
             }
         }
     }
