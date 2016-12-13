@@ -174,8 +174,39 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 // MARK - Calendar
     
-    @IBAction func secretSFEventTap() {
+    
+    @IBAction func secretGoldenGateEventTap() {
+        print("user taps GG secret event btn")
         
+        var ggJson: JSON? = nil
+        
+        let banner = Banner(title: "Around Golden Gate Bridge?", subtitle: "Do you know Godzilla was shot here?", image: UIImage(named: "dropPin"), backgroundColor: UIColor(red:190.00/255.0, green:101.0/255.0, blue:249/255.0, alpha:1.00))
+        
+        for j in self.sfo {
+            if let cid = j["contentId"].string, cid == "534815" {
+                ggJson = j
+            }
+        }
+        banner.didTapBlock = {
+            
+            if let c = ggJson {
+                let vc = DetailViewController()
+                vc.allowedDismissDirection = .bottom
+                vc.directionLock = true
+                vc.maskType = .black
+                vc.content = c
+                //            vc.ind = indexPath.item
+                
+                vc.showInteractive()
+            }
+        }
+        banner.dismissesOnTap = true
+        banner.show(duration: 5.0)
+    }
+    
+    
+    @IBAction func secretSFEventTap() {
+        print("user taps SF secret event btn")
         let banner = Banner(title: "Around San Francisco?", subtitle: "Interested in movies that were shot here?", image: UIImage(named: "dropPin"), backgroundColor: UIColor(red:190.00/255.0, green:101.0/255.0, blue:249/255.0, alpha:1.00))
         banner.didTapBlock = {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"MapViewController") as! MapViewController
