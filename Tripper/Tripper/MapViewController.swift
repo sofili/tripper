@@ -51,9 +51,9 @@ public class MapViewController: UIViewController, GMSMapViewDelegate, UICollecti
         // Default SFO
         var camera = GMSCameraPosition.camera(withLatitude: 37.806592, longitude: -122.4452370, zoom: 12.0)
         if city == City.nrt {
-            camera = GMSCameraPosition.camera(withLatitude: 36.245659, longitude: 137.5210113, zoom: 6.0)
+            camera = GMSCameraPosition.camera(withLatitude: 35.58564, longitude: 139.6487953, zoom: 11.0)
         } else if city == City.cdg {
-            camera = GMSCameraPosition.camera(withLatitude: 48.853129, longitude: 2.368908, zoom: 12.0)
+            camera = GMSCameraPosition.camera(withLatitude: 48.812805, longitude: 2.3419853, zoom: 11.0)
         }
         
         //        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)

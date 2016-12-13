@@ -29,5 +29,8 @@ class VVCollectionViewCell: UICollectionViewCell {
         self.imageView.image = UIImage(named: fileName)
     }
     
+    func setTitle(title: String) {
+        self.titleLabel.text = title
+    }
 
 }
