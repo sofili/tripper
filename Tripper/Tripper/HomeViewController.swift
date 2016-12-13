@@ -184,7 +184,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.navigationController?.pushViewController(vc, animated: true)
         }
         banner.dismissesOnTap = true
-        banner.show(duration: 3.0)
+        banner.show(duration: 5.0)
     }
     
     @IBAction func secretJPEventTap() {
@@ -193,7 +193,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let notification = UILocalNotification()
         notification.alertBody = "Traveling to Tokyo? Would you be interested checking out movies that were shot there? "
         notification.alertAction = "Yes, take me to Tripper"
-        notification.fireDate = NSDate(timeIntervalSinceNow: +15) as Date
+        notification.fireDate = NSDate(timeIntervalSinceNow: +10) as Date
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["action": "JP"]
         notification.category = "tripperCategory"
